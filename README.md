@@ -135,6 +135,44 @@ model =  mm.GCNEdgeClassifier(in_channels=input_layer,
 run_model(model, train_dataset, test_dataset, mn, epcs, device=device)
 ```
 
+## Benchmarking Reproducibility
+
+### Baselines (Time Series, No Graph)
+
+| Model Name | Repository / Source Code | Python Package                               |
+| ---------- | ------------------------ | -------------------------------------------- |
+| SARIMA     | -                        | `statsmodels.tsa.statespace.sarimax.SARIMAX` |
+| LSTM       | -                        | `torch.nn.LSTM`                              |
+| GRU        | -                        | `torch.nn.GRU`                               |
+
+### Time-Invariant GNNs (Static Graph)
+
+| Model Name | Repository / Source Code                                                                     | Python Package                              |
+| ---------- | -------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| CHEB       | [https://github.com/mdeff/cnn_graph](https://github.com/mdeff/cnn_graph)                     | `torch_geometric.nn.conv.ChebConv`          |
+| GAT        | [https://github.com/PetarV-/GAT](https://github.com/PetarV-/GAT)                             | `torch_geometric.nn.conv.GATConv`           |
+| GCN        | [https://github.com/tkipf/gcn](https://github.com/tkipf/gcn)                                 | `torch_geometric.nn.conv.GCNConv`           |
+| SAGE       | [https://github.com/williamleif/GraphSAGE](https://github.com/williamleif/GraphSAGE)         | `torch_geometric.nn.conv.SAGEConv`          |
+| S2GC       | [https://github.com/allenhaozhu/SSGC](https://github.com/allenhaozhu/SSGC)                   | `torch_geometric.nn.conv.SSGConv`           |
+| EGC        | [https://github.com/shyam196/egc](https://github.com/shyam196/egc)                           | `torch_geometric.nn.conv.EGConv`            |
+| A-DGN      | [https://github.com/gravins/Anti-SymmetricDGN](https://github.com/gravins/Anti-SymmetricDGN) | `torch_geometric.nn.conv.AntiSymmetricConv` |
+| LEConv     | [https://github.com/malllabiisc/ASAP](https://github.com/malllabiisc/ASAP)                   | `torch_geometric.nn.conv.LEConv`            |
+| SuperGAT   | [https://github.com/dongkwan-kim/SuperGAT](https://github.com/dongkwan-kim/SuperGAT)         | `torch_geometric.nn.conv.SuperGATConv`      |
+| PAN        | [https://github.com/YuGuangWang/PAN](https://github.com/YuGuangWang/PAN)                     | `torch_geometric.nn.conv.PANConv`           |
+
+### Temporal GNNs (Spatiotemporal)
+
+| Model Name | Repository / Source Code                                                                                                               | Python Package                |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| GConvLSTM  | [https://github.com/benedekrozemberczki/pytorch_geometric_temporal](https://github.com/benedekrozemberczki/pytorch_geometric_temporal) | `torch_geometric_temporal.nn` |
+| GConvGRU   | [https://github.com/youngjoo-epfl/gconvRNN](https://github.com/youngjoo-epfl/gconvRNN)                                                 | `torch_geometric_temporal.nn` |
+| TGCN       | [https://github.com/lehaifeng/T-GCN](https://github.com/lehaifeng/T-GCN)                                                               | `torch_geometric_temporal.nn` |
+| DCRNN      | [https://github.com/liyaguang/DCRNN](https://github.com/liyaguang/DCRNN)                                                               | `torch_geometric_temporal.nn` |
+| A3TGCN     | [https://github.com/lehaifeng/T-GCN/tree/master/A3T-GCN](https://github.com/lehaifeng/T-GCN/tree/master/A3T-GCN)                       | `torch_geometric_temporal.nn` |
+| STDN       | [https://github.com/roarer008/STDN](https://github.com/roarer008/STDN)                                                                 | -                             |
+
+
+
 ## 📃 License
 
 This project is licensed under the MIT License.
