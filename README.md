@@ -25,6 +25,10 @@ The organization of this repository is:
 > - **outputs**/: weigths and results
 ---
 
+## Graph Neural Networks Taxonomy
+
+![Taxonomy Tree](images/taxonomia_gnn.png)
+
 
 ##  ▶️  Benchmarks (Reproducing Experiments)
 
